@@ -1030,7 +1030,7 @@ public partial class PostgresAdapter : ISqlAdapter
     /// <param name="columnName">The column name.</param>
     public void AppendColumnName(StringBuilder sb, string columnName)
     {
-        sb.AppendFormat("\"{0}\"", columnName);
+        sb.AppendFormat("\"{0}\"", columnName.ToLower());
     }
 
     /// <summary>
@@ -1040,7 +1040,7 @@ public partial class PostgresAdapter : ISqlAdapter
     /// <param name="columnName">The column name.</param>
     public void AppendColumnNameEqualsValue(StringBuilder sb, string columnName)
     {
-        sb.AppendFormat("\"{0}\" = @{1}", columnName, columnName);
+        sb.AppendFormat("\"{0}\" = @{1}", columnName.ToLower(), columnName.ToLower());
     }
 }
 
